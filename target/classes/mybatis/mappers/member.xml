@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="mapper.member">
+	<resultMap type="memberVO" id="memResult">
+		<result property="MNO" column="MNO"/>
+        <result property="MNAME" column="MNAME" />
+        <result property="EMAIL" column="EMAIL" />
+        <result property="PWD" column="PWD" />
+        <result property="CRE_DATE" column="CRE_DATE" />				
+	</resultMap>
+
+	<select id="selectAllMemberList" resultMap="memResult">
+      <![CDATA[
+         SELECT MNO,MNAME,EMAIL,PWD,CRE_DATE FROM MEMBERS ORDER BY MNO ASC 	
+      ]]>			
+	</select>
+	
+	<select id="selectName" resultType="String">
+	    <![CDATA[
+		select MNAME from MEMBERS
+		where EMAIL = 's1@test.com'			
+	    ]]>
+	</select>
+	
+	<select id="selectPwd" resultType="int" >
+		  <![CDATA[ 
+		    select PWD from MEMBERS 
+		    where EMAIL = 's1@test.com'
+		 ]]>
+	</select> 	
+	
+	<select id="selectMemberById" resultType="memberVO"  parameterType="String" >
+      <![CDATA[
+         select * from MEMBERS
+         where
+         EMAIL=#{EMAIL}			
+      ]]>
+	 </select>	
+	 
+	<select id="selectMemberByPwd" resultMap="memResult"  parameterType="int" >
+      <![CDATA[
+         select * from MEMBERS
+         where
+         PWD = #{PWD}			
+      ]]>
+    </select>	 	
+</mapper>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
