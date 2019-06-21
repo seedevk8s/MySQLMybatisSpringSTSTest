@@ -21,25 +21,30 @@
 	</appender>	
 	
 	<!-- Application Loggers -->
-	<logger name="com.myspring.pro27">
+	<logger name="com.myspring.pro27" >
 		<level value="debug" />
+
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
 		<level value="debug" />
+
 	</logger>	
 	
 	<logger name="org.springframework.beans">
 		<level value="debug" />
+
 	</logger>
 	
 	<logger name="org.springframework.context">
 		<level value="debug" />
+
 	</logger>
 
 	<logger name="org.springframework.web">
 		<level value="debug" />
+<!-- 		<appender-ref ref="console"/> -->
 	</logger>
 
 	<!-- Root Logger -->

@@ -2,6 +2,8 @@ package com.myspring.pro27.member.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
@@ -9,11 +11,13 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.myspring.pro27.member.dao.MemberDAO;
+import com.myspring.pro27.member.dao.MemberDAOImpl;
 import com.myspring.pro27.member.vo.MemberVO;
 
 @Service("memberService")
 @Transactional(propagation=Propagation.REQUIRED)
 public class MemberServiceImpl  implements MemberService{
+	private static final Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
 	
 	   @Autowired
 	   private MemberDAO memberDAO;

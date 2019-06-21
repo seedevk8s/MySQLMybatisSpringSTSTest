@@ -36,8 +36,8 @@ public class MemberControllerImpl extends MultiActionController implements Membe
 	public ModelAndView listMembers(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = getViewName(request);
 		
-		logger.info("viewName: "+ viewName);
-		logger.debug("viewName: "+ viewName);	
+		logger.info("info 레벨 : viewName =  "+ viewName);
+		logger.debug("debug 레벨  : viewName = "+ viewName);	
 		
 		List membersList = memberService.listMembers();
 		ModelAndView mav = new ModelAndView(viewName);

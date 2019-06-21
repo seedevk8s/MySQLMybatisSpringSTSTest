@@ -3,14 +3,19 @@ package com.myspring.pro27.member.dao;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
+import com.myspring.pro27.member.controller.MemberControllerImpl;
 import com.myspring.pro27.member.vo.MemberVO;
 
 @Repository("memberDAO")
 public class MemberDAOImpl implements MemberDAO {
+	private static final Logger logger = LoggerFactory.getLogger(MemberDAOImpl.class);
+	
 	@Autowired
 	private SqlSession sqlSession;
 
